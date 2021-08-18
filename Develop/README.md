@@ -1,5 +1,5 @@
 # ReadMe Generator
-  ## GitHub: THill99
+  ## GitHub: Tysean99
   ## Description
   This project allows a user to generate a readme for their project by answering prompts given to them in the terminal. Like I am doing now.
   ## Table of Contents
