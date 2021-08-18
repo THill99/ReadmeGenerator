@@ -1,19 +1,77 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  if (license === "None") {
+    return "";
+  } else if (license === "BSD") {
+    return (
+      "![GitHub License](https://img.shields.io/badge/License-" +
+      license +
+      "-green)"
+    );
+  } else {
+    return (
+      "![GitHub License](https://img.shields.io/badge/License-" +
+      license +
+      "-blue)"
+    );
+  }
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  if (license === "None") {
+    return "";
+  }
+  return "* [License](#license)";
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  if (license === "None") {
+    return "";
+  }
+  return `## License
+This project is licensed under the ${license}`;
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
+  ## GitHub: ${data.github}
+  ## Description
+  ${data.description}
+  ## Table of Contents
 
+
+  * [Installation](#installation)
+  * [Testing](#test)
+  * [Usage](#usage)
+  ${renderLicenseLink(data.license)}
+
+  ## Installation
+  The ${data.installation} command should be run to install dependencies.
+
+  ## Test
+  The ${data.test} command should be run to run tests
+
+  ## Usage
+  ${data.usage}
+
+  ${renderLicenseSection(data.license)}
+  This project utilizes the ${data.license} license.
+  ${renderLicenseBadge(data.license)}
+  ## Contributing
+  ${data.contributing}
+  
+  ## Questions
+  If you have any questions, you can contact me via email: ${
+    data.email
+  }. You can also see my code and contact me on Github: [${
+    data.github
+  }](https://www.github.com/${data.github}) 
 `;
 }
 
